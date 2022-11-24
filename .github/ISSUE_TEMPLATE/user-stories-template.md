@@ -1,7 +1,7 @@
 ---
 name: USER STORIES TEMPLATE
 about: basic template
-title: ''
+title: 'USER STORY:<title>'
 labels: ''
 assignees: ''
 
