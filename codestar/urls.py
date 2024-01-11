@@ -20,7 +20,7 @@ from .views import CustomLogoutView
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("blog.urls"), name="blog_urls"),
-    path("summernote/", include("django_summernote.urls")),
+    # path("summernote/", include("django_summernote.urls")),
     path("accounts/logout/", CustomLogoutView.as_view(), name="account_logout"),
     path("accounts/", include("allauth.urls")),
 ]
