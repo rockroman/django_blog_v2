@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<h2>Create Post</h2>
+
+<div class="container py-3">
+    <form  enctype="multipart/form-data" method="post" action="{% url 'post_create' %}">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form.as_p }}
+
+        <button class="bg-primary text-white px-4" type="submit">Submit</button>
+    </form >
+</div>
+{% endblock %}
