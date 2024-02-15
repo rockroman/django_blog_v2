@@ -1,4 +1,6 @@
+body{
 
+}
 
 .brand {
     font-family: Lato, sans-serif;
@@ -24,6 +26,7 @@
 }
 
 .main-bg {
+    background-image: url('/media/oo.png');
     background-color: #F9FAFC;
 }
 

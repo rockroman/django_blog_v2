@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from .views import CustomLogoutView
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("blog.urls"), name="blog_urls"),
-    # path("summernote/", include("django_summernote.urls")),
+    path("", include("employee.urls")),
     path("accounts/logout/", CustomLogoutView.as_view(), name="account_logout"),
     path("accounts/", include("allauth.urls")),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

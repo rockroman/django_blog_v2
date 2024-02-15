@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+    <h1>Employee</h1>
+    <ul>
+        {% for employee in employees %}
+            <li>{{ employee.emp_name }} </li>
+            <li>{{ employee.emp_salary  }} </li>
+            <li>{{ employee.emp_starting_time }} </li>
+            <li>{{ employee.joining_date}} </li>
+
+        {% endfor %}
+
+    </ul>
+
+
+
+{% endblock content %}
