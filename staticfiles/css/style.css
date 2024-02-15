@@ -26,7 +26,7 @@ body{
 }
 
 .main-bg {
-    background-image: url('/media/oo.png');
+    background-image: url('/static/images/oo.png');
     background-color: #F9FAFC;
 }
 
