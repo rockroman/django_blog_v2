@@ -36,7 +36,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
-ALLOWED_HOSTS = ["*", "blog-django-v2-e3ebe4207d71.herokuapp.com"]
+ALLOWED_HOSTS = ["*",]
 SESSION_ENGINE = "django.contrib.sessions.backends.db"
 
 
@@ -56,7 +56,6 @@ INSTALLED_APPS = [
     "cloudinary_storage",
     "cloudinary",
     "crispy_forms",
-    # "django_summernote",
     "blog",
     "ckeditor",
 
