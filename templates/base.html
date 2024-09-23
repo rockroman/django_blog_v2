@@ -1,4 +1,5 @@
 {% load static %}
+{% load socialaccount %}
 
 <!DOCTYPE html>
 <html class="h-100">
@@ -59,6 +60,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="{% provider_login_url 'google' %}">Login with Google</a>
                     </li>
                     {% endif %}
                 </ul>

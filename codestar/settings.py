@@ -14,6 +14,7 @@ from pathlib import Path
 from django.contrib.messages import constants as messages
 import os
 import dj_database_url
+import re
 
 if os.path.isfile("env.py"):
     import env
@@ -60,7 +61,35 @@ INSTALLED_APPS = [
     "ckeditor",
 
     "employee",
+
+    # google
+    'allauth.socialaccount.providers.google',
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://blog-django-v2-e3ebe4207d71.herokuapp.com',
+     r"^https://.*\.codeinstitute-ide\.net$",
+     'https://8000-rockroman-djangoblogv2-3gqqhju6elg.ws.codeinstitute-ide.net'
+
+]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
+]
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email'
+        ],
+        'AUTH_PARAMS': {
+            'access_type':'online',
+        }
+    }
+}
+SITE_ID = 2
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = "/"
@@ -112,13 +141,13 @@ X_FRAME_OPTIONS = "SAMEORIGIN"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
-# DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
+DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
 
 
 # Password validation
